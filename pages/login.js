@@ -1,8 +1,20 @@
 import next from 'next';
 import Link from 'next/link';
+import { useState } from 'react';
 import { FaRegEnvelope } from 'react-icons/fa';
 import { MdLock, MdLockOutline } from 'react-icons/md';
 export default function Login() {
+ const [user,setUser] = useState({email:'',password:''})
+
+let name,value
+const handleInputs = (e)=>{
+  console.log(e)
+  name = e.target.name
+  value = e.target.value
+
+  setUser({...user,[name]:value})
+}
+
   return (
     <section className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100 ">
       <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
@@ -25,6 +37,8 @@ export default function Login() {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    value={user.email}
+                    onChange={handleInputs}
                     className="bg-gray-100 outline-none text-sm flex-1 text-gray-400"
                   />
                 </div>
@@ -34,6 +48,8 @@ export default function Login() {
                     type="password"
                     name="password"
                     placeholder="Password"
+                    value={user.password}
+                    onChange={handleInputs}
                     className="bg-gray-100 outline-none text-sm flex-1 text-gray-400"
                   />
                 </div>

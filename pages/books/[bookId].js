@@ -23,7 +23,7 @@ export default function ViewBooks() {
   // const bookData = data.data
   // const {_id, title, excerpt, userId, ISBN, category, subcategory, reviews, isDeleted, releasedAt, createdAt, updatedAt, reviewsData}=book
 
-  console.log(bookData);
+  console.log();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100 ">
